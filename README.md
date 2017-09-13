@@ -14,7 +14,7 @@ d3.select("svg")
   .append("g")
   .call(brush);
 ```
-The rest will be same as using the d3-v3 version of the plugin.
+The rest will be the same as using the d3-v3 version of the plugin.
 ```
 Usage:
 Click to add an anchor point, double click to close the selection.

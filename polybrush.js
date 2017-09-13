@@ -10,6 +10,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 (function(d3) {
     d3.polybrush = function() {
         var dispatch = d3.dispatch("brushstart", "brush", "brushend"),
+            el = null,
             x = null,
             y = null,
             extent = [],
@@ -25,6 +26,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                 return d[1];
             });
         var brush = function(g) {
+            el = g;
             g.each(function() {
                 var bg, e, fg;
                 g = d3.select(this)
@@ -52,8 +54,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             });
         };
         var drawPath = function() {
-            return d3.selectAll("g path").attr("d", function(d) {
-                return line(d) + "Z";
+            return el.each(function() {
+                d3.select(this)
+                    .selectAll("g path").attr("d", function(d) {
+                        return line(d) + "Z";
+                    });
             });
         };
         var scaleExtent = function(domain) {

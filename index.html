@@ -44,11 +44,9 @@
             .x(d3.scaleLinear().range([0, w]))
             .y(d3.scaleLinear().range([0, h]))
             .on("brushstart", function() {
-                console.log("brushstart");
                 svg.selectAll(".selected").classed("selected", false);
             })
             .on("brush", function() {
-                console.log("brushing");
                 // set the 'selected' class for the circle
                 svg.selectAll(".point").classed("selected", function(d) {
                     //get the associated circle

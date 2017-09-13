@@ -102,7 +102,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                 extent.splice(0, extent.length);
             }
             d3.select(".extent").on("mousedown.brush", moveExtent);
-            return dispatch.call("brushend", this);
+            return dispatch.call("end", this);
         };
         var addAnchor = function() {
             var g, w,
@@ -121,7 +121,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
                 w.on("mousemove.brush", function() {
                     return moveAnchor(_this);
                 }).on("dblclick.brush", closePath);
-                dispatch.call("brushstart", this);
+                dispatch.call("start", this);
             }
             if (extent.length > 1) {
                 extent.pop();
@@ -167,7 +167,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
             w = d3.select(window);
             w.on("mousemove.brush", null).on("mouseup.brush", null);
             wasDragged = true;
-            return dispatch.call("brushend", this);
+            return dispatch.call("end", this);
         };
         var moveExtent = function() {
             var _this = this;

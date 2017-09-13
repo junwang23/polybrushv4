@@ -43,7 +43,7 @@
         var brush = d3.polybrush()
             .x(d3.scaleLinear().range([0, w]))
             .y(d3.scaleLinear().range([0, h]))
-            .on("brushstart", function() {
+            .on("start", function() {
                 svg.selectAll(".selected").classed("selected", false);
             })
             .on("brush", function() {

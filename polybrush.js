@@ -9,7 +9,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 */
 (function(d3) {
     d3.polybrush = function() {
-        var dispatch = d3.dispatch("brushstart", "brush", "brushend"),
+        var dispatch = d3.dispatch("start", "brush", "end"),
             el = null,
             x = null,
             y = null,

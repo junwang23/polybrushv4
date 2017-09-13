@@ -1,0 +1,25 @@
+{
+  "name": "polybrushv4",
+  "version": "1.0.0",
+  "description": "a modified version of the polybrush plugin for d3, originaly created by Geoffrey T. Bell, to make it compatible with d3-v4",
+  "main": "polybrush.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/junwang23/polybrushv4.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/junwang23/polybrushv4/issues"
+  },
+  "homepage": "https://github.com/junwang23/polybrushv4#readme",
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^3.0.0"
+  }
+}

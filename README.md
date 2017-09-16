@@ -6,7 +6,7 @@ The d3-3.x based plugin is forked from: [https://gist.github.com/gtb104/3667340]
 
 The changes include adapting to d3-4.x-api and a few minor fixes. 
 
-Now the plugin shall be instantiated like d3.brush() in [d3-4.x-api](https://github.com/d3/d3-brush).
+Now the plugin can be instantiated like d3.brush() in [d3-4.x-api](https://github.com/d3/d3-brush).
 ```javascript
 var brush = d3.polybrush()
   .x({x_scale})
@@ -16,6 +16,8 @@ d3.select("svg")
   .append("g")
   .call(brush);
 ```
+Please keep in mind that the ```extent``` in the polybrush is very different from that in d3-brush. So, the working area of the brush can only be assigned by the ```range``` of the ```{x_scale}``` and ```{y_scale}```.
+
 Three events are dispatched, which are ```start```, ```brush```, and ```end```, consistent with the events of d3-brush. The event names are a bit different in the d3-3.x based version.
 
 The rest is the same as using the d3-3.x version of the plugin.
